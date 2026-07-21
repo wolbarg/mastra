@@ -1,0 +1,76 @@
+{
+  "name": "@wolbarg/mastra",
+  "version": "1.0.1",
+  "description": "Official Mastra Processor for Wolbarg shared memory — recall on processInput, remember on processOutputResult.",
+  "license": "MIT",
+  "author": {
+    "name": "Atharv Munde",
+    "url": "https://github.com/Atharvmunde11"
+  },
+  "homepage": "https://wolbarg.com/docs/integrations/mastra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolbarg/mastra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wolbarg/mastra/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@mastra/core": ">=1.0.0",
+    "@mastra/memory": ">=1.0.0",
+    "wolbarg": ">=0.5.4"
+  },
+  "peerDependenciesMeta": {
+    "@mastra/memory": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@mastra/core": "^1.51.0",
+    "@types/node": "^22.15.21",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "wolbarg": "file:../../sdk"
+  },
+  "keywords": [
+    "wolbarg",
+    "mastra",
+    "processor",
+    "agent-memory",
+    "shared-memory",
+    "ai-agents"
+  ]
+}
