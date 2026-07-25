@@ -126,7 +126,7 @@ Required: `memory`, `agent`. Optional: `topK`, `recall`/`remember` toggles, `inj
 
 ## Limitations
 
-- Not a Mastra Storage or Vector backend — do not pass Wolbarg as `storage:` / `vector:`.
+- Official shape is a Mastra **`Processor`** (`processInput` / `processOutputResult`) — **not** a Mastra Memory provider, Storage backend, or Vector store. Do not pass Wolbarg as `storage:` / `vector:` / `memory:`.
 - Text extraction only reads `content.parts` with `type === "text"`.
 - Does not replace Observational Memory or working-memory Markdown blocks.
 
